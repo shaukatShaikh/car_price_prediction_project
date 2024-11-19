@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        form {
+            width: 50%; /* Reduced width */
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Ensures table cells don't have gaps */
+        }
+
+        th, td {
+            padding: 5px; /* Reduced padding */
+            text-align: left;
+            line-height: 0.2; /* Reduced line-height */
+        }
+
+        select, input {
+            padding: 4px; /* Reduced padding */
+            width: 100%;
+            margin: 4px 0; /* Reduced margin */
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 8px 16px; /* Reduced padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px; /* Reduced font size */
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .prediction {
+            margin-top: 20px;
+            font-size: 20px; /* Adjusted font size */
+            color: #3551dc;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Car Price Prediction</h1>
+    </center>
+
+    <form action="/text" method="post">
+        <table>
+            <tr>
+                <td><h3>Enter Present Price of Car in lakhs:</h3></td>
+                <td><input type="number" name="Present_Price" required></td>
+            </tr>
+
+            <tr>
+                <td><h3>Enter Present km's driven by Car:</h3></td>
+                <td><input type="number" name="Kms_Driven" required></td>
+            </tr>
+
+            <tr>
+                <td><h3>Enter Number of owners (0 or 1 or 2):</h3></td>
+                <td><input type="number" name="Owner" required></td>
+            </tr>
+
+            <tr>
+                <td><h3>Enter Registration Year of a Car:</h3></td>
+                <td>
+                    <select name="reg_year" required>
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="2003">2003</option>
+                        <option value="2004">2004</option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                    </select>
+                </td>
+                <!-- <td><input type="number" name="reg_year" required></td> -->
+            </tr>
+
+            <tr>
+                <td><h3>Enter Fuel Type of a Car:</h3></td>
+                <td>
+                    <select name="Fuel_Type_Petrol" required>
+                        <option value="Petrol">Petrol</option>
+                        <option value="Diesel">Diesel</option>
+                        <option value="CNG">CNG</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><h3>Enter Seller Type of a Car:</h3></td>
+                <td>
+                    <select name="Seller_Type_Individual" required>
+                        <option value="Dealer">Dealer</option>
+                        <option value="Individual">Individual</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><h3>Enter Transmission Type of a Car:</h3></td>
+                <td>
+                    <select name="Transmission_Manual" required>
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <br>
+
+        <center>
+            <button type="submit">Predict</button>
+        </center>
+    </form>
+
+    <div class="prediction">
+        {{prediction_text}}
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,87 @@
+<html>
+<head>
+    <center>
+        <h1>Car Price Prediction</h1>
+    </center>
+    
+</head>
+
+<body>
+<form action="/text" method="post">
+
+<table border="1px">
+    <tr>
+        <td><h3>Enter Present Price of Car:</h3></td>
+        <td><input type="number" name="Present_Price"></td>
+    </tr>
+
+    <tr>
+        <td><h3>Enter Present km's driven by  Car:</h3></td>
+        <td><input type="number" name="Kms_Driven"></td>
+    </tr>
+
+    <tr>
+        <td><h3>Enter Number of owners (0 or 1 or 2):</h3></td>
+        <td><input type="number" name="Owner"></td>
+    </tr>
+
+    <tr>
+        <td><h3>Enter Registration Year of a Car:</h3></td>
+        <td><input type="number" name="reg_year"></td>
+    </tr>
+
+    <tr>
+        <td><h3>Enter Fuel Type of a Car:</h3></td>
+        <td>
+            <select name="Fuel_Type_Petrol">
+                <option value="Petrol"> Petrol</option>
+                <option value="Diesel"> Diesel</option>
+                <option value="CNG"> CNG</option>
+            </select>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td><h3>Enter Seller Type of a Car:</h3></td>
+        <td>
+            <select name="Seller_Type_Individual">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td><h3>Enter Transmission Type of a Car:</h3></td>
+        <td>
+            <select name="Transmission_Manual">
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+
+        </td>
+    </tr>
+
+</table>
+
+<br>
+<br>
+<center>
+    <button type="submit">Predict</button>
+</center>
+
+
+</form>
+
+<br>
+<br>
+<br>
+{{prediction_text}}
+
+</body>
+
+
+
+</html>
